@@ -69,7 +69,6 @@
     nextShapeIndex: null, // Índice da próxima forma
     sqs: [], // Lista de todos os quadrados no tabuleiro
     score: 0, // Pontuação do jogador
-    best: score,
     scoreDisplay: null, // Elemento que exibe a pontuação
     level: 1, // Nível atual do jogador
     levelDisplay: null, // Elemento que exibe o nível
