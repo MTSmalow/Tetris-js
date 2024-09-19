@@ -82,28 +82,6 @@
     sTimer: null, // Temporizador secundário
     speed: 700, // Velocidade inicial do jogo
     lines: 0, // Número de linhas eliminadas
-
-    saveScoreToLocalStorage: function () {
-      localStorage.setItem("tetrisScore", this.score);
-    },
-
-    incScore: function (amount) {
-      this.score = this.score + amount;
-      this.setInfo("score");
-      this.saveScoreToLocalStorage(); // Adiciona esta linha
-    },
-
-    getScoreFromLocalStorage: function () {
-      var savedScore = localStorage.getItem("tetrisScore");
-      if (savedScore !== null) {
-        this.score = parseInt(savedScore, 10);
-        this.setInfo("score");
-      }
-    },
-    updateBestDisplay: function () {
-      var bestDisplay = document.getElementById("best");
-      bestDisplay.innerHTML = this.best;
-    },
     init: function () {
       // Método de inicialização do jogo
       isStart = true; // Marca o jogo como iniciado
@@ -113,8 +91,6 @@
       this.initLevelScores(); // Inicializa os escores de nível
       this.initShapes(); // Inicializa as formas do Tetris
       this.bindKeyEvents(); // Adiciona manipuladores de eventos para as teclas
-      this.getScoreFromLocalStorage(); // Adiciona esta linha
-      this.updateBestDisplay(); // Adicione esta linha
       this.play(); // Inicia o loop principal do jogo
     },
     initBoard: function () {
